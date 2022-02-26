@@ -1,0 +1,143 @@
+
+
+.text-center{
+    font-family: Mulish;
+    font-style: normal;
+   color : #02A5F5;	
+    font-size: 23px;
+    margin: -50px 0 25px 0;
+    display: block;
+    text-align: center;
+}
+form{
+    position: relative;
+    width: 20rem;
+}
+.box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+    background-color: whitesmoke;
+	border-radius:3px;
+	padding:70px 50px;
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+    height: 2rem ;
+}
+.input-container label{
+	position:absolute;
+	top:-0.3rem;
+	left:0.6rem;
+    font-family: Mulish;
+    font-style: normal;
+	font-size:8px;
+    color : black;	
+    padding: 0 0.2rem;
+    cursor:text;
+	
+    background-color:whitesmoke ;
+}
+.input-container input{ 
+    
+  top: 0;
+  left: 0;
+  border:1px solid black; 
+  border-radius: 3px; 
+  background:transparent;
+  width:100%;
+  height: 100%;
+  padding: 0.25rem;
+  font-family: Mulish;
+  font-style: normal;
+  font-size:10px;
+  color : #02A5F5;
+}
+.input-container input:focus{ 
+ 
+ border:2px solid black;	
+}
+
+.btn{
+	color:#fff;
+	background-color:#02A5F5;;
+	outline: none;
+    border: 0;
+   	padding:10px 20px;
+	margin-top:0px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+    display: block;
+    margin: auto;
+    }
+    .btn:hover{
+    
+  
+   
+        text-decoration: underline; 
+       transition: 0.5s;
+    }
+   .input-container1 {
+    position:relative;
+    display: block;
+	margin:1rem auto;
+      height: 2rem ;   
+   }
+   .input-container2{
+    
+    display: inline;
+    float: left;
+    
+   }
+
+   .input-container1 a{
+       float: right;
+       font-family: Mulish;
+       font-style: normal;
+       font-size:1rem;
+       color : #02A5F5;
+   }
+    .input-container1 a:hover{
+        text-decoration: underline; 
+        transition: 0.5s;
+    }
+   .input-container2 input{ 
+    
+    
+      margin: auto 0.25rem; 
+  
+     }
+
+.input-container2 label{ 
+    
+  
+    font-family: Mulish;
+    font-style: normal;
+    font-size:1rem;
+ 
+}
+.input-containerSignup{
+       
+        display: block;
+        margin:0.7rem auto;
+        height: 2rem ;
+        text-align: center;  
+        font-family: Mulish;
+        font-style: normal;
+        color: black;
+       
+}
+.input-containerSignupp:hover > span{
+    text-decoration: underline; 
+    transition: 0.5s;
+}
+.input-containerSignup span{
+    color : #02A5F5; 
+}
+.input-containerSignup span:hover{
+    text-decoration: underline; 
+    transition: 0.5s;
+}
