@@ -15,7 +15,7 @@ export const PropertyType = () => {
           Choose property type
         </p>
        </div>  
-     <div>  
+     <div >  
         <div className="chooseProperty_group">
             <div className="chooseProperty_group_type"  onClick={()=>{handle("commercialspace")}}> 
             <img

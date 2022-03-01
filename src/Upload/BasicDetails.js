@@ -1,6 +1,21 @@
 import React from 'react'
 import "./basicdetails.scss"
-export const BasicDetails = () => {
+import { useNavigate } from 'react-router-dom';
+export const BasicDetails = ({nextStep,handleChange,
+  values, prevStep}) => {
+    const navigate=useNavigate()
+  const conTinue = e => {
+      e.preventDefault();
+    //  this.props.nextStep();
+       
+        nextStep();
+    };
+    const previous = e => {
+      e.preventDefault();
+    //  this.props.nextStep();
+       navigate('/upload')
+  
+    };
   return (
    
    <div className='basicDetails'>
@@ -76,8 +91,8 @@ export const BasicDetails = () => {
 	</div>
    <div className='comm-btn' > 
    
-    <button   className="comm-btn_btn1">Previous</button>
-    <button   className="comm-btn_btn1">Next</button>
+    <button   className="comm-btn_btn1"  onClick={previous }>Previous</button>
+    <button   className="comm-btn_btn1"  onClick={conTinue }>Next</button>
     </div>	 
       
 

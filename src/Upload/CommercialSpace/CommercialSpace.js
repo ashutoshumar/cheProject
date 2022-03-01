@@ -4,6 +4,7 @@ import { BasicDetails } from '../BasicDetails';
 import { CommPricingInfo } from './CommPricingInfo';
 import { CommextraInfo } from './CommextraInfo';
 import { UploadPic } from '../UploadPic';
+import { PropertyType } from '../PropertyType';
 export default class CommercialSpace extends Component {
 
     state = {
@@ -55,10 +56,12 @@ render() {
     const values = {  property_name,  name, email,phone, pinCode, city, fullAddress,  rent_per_Squarefoot,security_money,maintenance_charge, electric_charge,termination_charge, other_charges,est_tot_charge_per_month, dis_from_road, preferredTenants,numbersOfBathRoom,furnishingStatus, availabilityStatus, floorStatus, amenities, suitable_for,description,pic_url};
 
     switch (step) {
+        
         case 1:
           return (
             <BasicDetails
               nextStep={this.nextStep}
+              prevStep={this.prevStep}
               handleChange={this.handleChange}
               values={values}
               
