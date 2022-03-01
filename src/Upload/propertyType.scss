@@ -1,0 +1,123 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+ 
+}
+.propertyType
+{
+   position: relative;
+  width: 450px;
+  display: block;
+  margin: 2rem auto;
+  background:#ECFAFF;
+ 
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ 
+ 
+}
+.Heading{
+  position: absolute;
+  width: 100%;
+  height: 7rem;
+  left: -1px;
+  top: 0px;
+  display: flex;
+  align-items: center;
+
+background: linear-gradient(180deg, #08B0E9 0%, #021B17 100%);
+border-radius: 0px 0px 15px 15px;
+p{
+font-family: Mulish;
+font-style: normal;
+font-weight: bold;
+font-size: 1rem;
+display:block;
+margin: auto;
+color: #FFFFFF;
+
+}
+}
+
+// .chooseProperty{
+ 
+  
+ 
+//   width: 100%;
+//   position:absolute;
+//   margin-top: 12rem;
+//   background:  white;
+//   border: 2px solid black;
+//   border-radius: 40px 40px 0px 0px;
+
+ .chooseProperty_group{
+    width: 100%;
+    position:absolute;
+    margin-top: 12rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr ;
+    gap: 40px 30px;
+    justify-items: center;
+    align-items: center;
+    &_type:hover{
+      box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.40);
+    }
+    &_type{
+     
+     
+      width: 100px;
+      height: 100px;
+      background: #FFFFFF;  
+      box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.14);
+      border-radius: 10px;
+     
+      &_img{
+        width: 50px;
+        height: 50px;
+        display: block;
+        margin: 10px auto;
+      }
+      p{
+        font-family: Mulish;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        text-align: center;
+        color: #032A2C;
+      }
+
+    }
+  
+
+  }
+  // }
+  
+  
+  // #footer{
+  //   position:relative;
+  //   font-family: Mulish;
+  //   font-style: normal;
+  //   font-weight: bold;
+  //   font-size: 20px;
+    
+  //   display: block;
+  //   text-align: center;
+  //   color: #032A2C;
+  //   top: 630px;
+  
+  // }
+  // #footer_terms{
+  //   position:relative;
+  //   font-family: Mulish;
+  //   font-style: normal;
+  //   font-weight: bold;
+  //   height: 5rem;
+  //   font-size: 10px;
+  //   display: block;
+  //   text-align: center;
+  //   color: #032A2C;
+  //   top: 650px;
+  //   margin-bottom: 50px;
+  // }
