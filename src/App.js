@@ -6,7 +6,7 @@ import { Login } from './Screen/Login_Signup/Login';
 import { Signup } from './Screen/Login_Signup/Signup';
 import { PropertyType } from './Upload/PropertyType';
 import CommercialSpace from './Upload/CommercialSpace/CommercialSpace';
-import { Route, Routes, Navigate,Link, Redirect, Switch} from "react-router-dom"
+import { Route, Routes, Navigate,Link} from "react-router-dom"
 function App() {
   return <>
 

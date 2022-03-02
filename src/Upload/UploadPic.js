@@ -7,6 +7,7 @@ export const UploadPic =({nextStep,handleChange,
   const conTinue = e => {
       e.preventDefault();
     //  this.props.nextStep();
+      console.log(values)
        nevigate('/')
        
     };

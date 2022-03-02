@@ -1,8 +1,6 @@
 import React from 'react'
-import { NavBar } from '../NavBar/NavBar'
-import { Login } from '../Login_Signup/Login'
-import { Signup } from '../Login_Signup/Signup'
-import { LandingScreen } from './LandingScreen'
+import { NavBar } from './NavBar/NavBar'
+import { LandingScreen } from './Landing/LandingScreen'
 
 export const HomeScreen = () => {
   return (

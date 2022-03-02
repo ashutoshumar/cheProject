@@ -4,7 +4,7 @@ import { BasicDetails } from '../BasicDetails';
 import { CommPricingInfo } from './CommPricingInfo';
 import { CommextraInfo } from './CommextraInfo';
 import { UploadPic } from '../UploadPic';
-import { PropertyType } from '../PropertyType';
+
 export default class CommercialSpace extends Component {
 
     state = {
@@ -26,7 +26,7 @@ export default class CommercialSpace extends Component {
         dis_from_road:'',
         furnishingStatus:'',
         availabilityStatus:'',
-        suitable_for:'',
+        suitable_for:[],
         floorStatus:'',
         amenities:'',
         description:'',
@@ -42,6 +42,9 @@ export default class CommercialSpace extends Component {
   };
   handleChange = input => e => {
     this.setState({ [input]: e.target.value });
+  };
+  handleChange1 = (input,value)  => {
+    this.setState({ [input]: value });
   };
   // Go back to prev step
   prevStep = () => {
@@ -87,6 +90,7 @@ render() {
              
               <CommextraInfo
                nextStep={this.nextStep}
+               handleChange1={this.handleChange1}
                prevStep={this.prevStep}
                handleChange={this.handleChange}
                values={values}

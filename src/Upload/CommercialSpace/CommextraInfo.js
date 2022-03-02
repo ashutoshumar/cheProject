@@ -1,14 +1,34 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./commextrainfo.scss"
 import { useRef } from "react";
-export const CommextraInfo =({nextStep,handleChange,
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated';
+export const CommextraInfo =({nextStep,handleChange,handleChange1,
   values, prevStep}) => {
+    const [selected,setSelected]=useState([])
+    const style = {
+      control: (base, state) => ({
+        ...base,
+        border: '1px solid #02A5F5',
+        boxShadow: 'none',
+        '&:hover': {
+            border: '1px solid rgb(59,59,59)',
+        }
+    })
+    };
+    const options = [
+      { value: 'chocolate', label: 'Chocolate' },
+      { value: 'strawberry', label: 'Strawberry' },
+      { value: 'vanilla', label: 'Vanilla' }
+    ]
+    const animatedComponents = makeAnimated();
     const ref = useRef();
   const conTinue = e => {
       e.preventDefault();
     //  this.props.nextStep();
        
         nextStep();
+     
     };
     const previous = e => {
       e.preventDefault();
@@ -16,6 +36,13 @@ export const CommextraInfo =({nextStep,handleChange,
        prevStep()
   
     };
+
+    const handleChangemulti=(options)=>{
+      setSelected(options);
+   //   handleChange1('suitable_for',selected)
+      console.log(selected)
+     
+    }
   return (
     <div className='extrainfoDetails'>
       <div className='extrainfoHeader'>
@@ -53,13 +80,24 @@ export const CommextraInfo =({nextStep,handleChange,
        
 	 <div className="extrainfoform_Basic_input-container">
         <label >Distance from road(Km)   </label>
-		<input  type="text"  placeholder=' '  />
+		<input  name="dis_from_road" type="text" onChange={handleChange('dis_from_road')}
+              defaultValue={values.dis_from_road}  />
 		
         		
 	 </div>
     <div className="extrainfoform_Basic_input-container">
         <label >Property Suitable for</label>
-		<input  type="text"  placeholder=''  />
+		{/* <input   name="dis_from_road" type="text" onChange={handleChange('dis_from_road')}
+              defaultValue={values.dis_from_road}  /> */}
+              <Select  placeholder="" 
+      closeMenuOnSelect={false}
+      components={animatedComponents}
+      isMulti
+      options={options}
+      styles={style}
+      onChange={handleChangemulti}
+    />
+            
 		
         		
 	</div>
@@ -67,12 +105,12 @@ export const CommextraInfo =({nextStep,handleChange,
   <div className="extrainfoform_Basic_input-container_split" >
 
         <label>Available From</label>
-        <p> Immediately available</p>		
+        <p onClick={()=>{handleChange1('availabilityStatus',"Immediately available")}}> Immediately available</p>		
         <input
         type="text"
         placeholder='Choose date'
         ref={ref}
-        onChange={(e) => console.log(e.target.value)}
+        onChange={handleChange('availabilityStatus')}
         onFocus={() => (ref.current.type = "date")}
         onBlur={() => (ref.current.type = "text")}
       />
@@ -80,22 +118,31 @@ export const CommextraInfo =({nextStep,handleChange,
 	</div>
     <div className="extrainfoform_Basic_input-container">
         <label >Furnishing status</label>
-		<input  type="password"  />
+        <Select  styles={style}   placeholder="" options={options} onChange={()=>{handleChangemulti()}} />
         		
 	</div>
 	<div className="extrainfoform_Basic_input-container" >
         <label>Floor Status</label>		
-		<input type="password" required="" placeholder=''/>
+        <Select  styles={style}   placeholder="" options={options}  onChange={()=>{handleChangemulti()}}/>
 		
 	</div>
     <div className="extrainfoform_Basic_input-container" >
         <label>Amenities</label>		
-		 <input type="text" required="" placeholder='' /> 
+        <Select 
+         styles={style}
+      closeMenuOnSelect={false}
+      components={animatedComponents}
+      placeholder=""
+      isMulti
+      options={options}
+      onChange={()=>{handleChangemulti()}}
+    /> 
 		
 	</div>
     <div className="extrainfoform_Basic_input-container_des" >
         <label>Description</label>		
-		 <input type="text" required="" placeholder='' /> 
+		 <textarea   name="description" type="text" onChange={handleChange('description')}
+              defaultValue={values.description} /> 
 		
 	</div>
    

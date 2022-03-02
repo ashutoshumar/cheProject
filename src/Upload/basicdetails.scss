@@ -111,6 +111,15 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         font-size:14px;
         
        }
+
+       input:hover {
+        border:1px solid black; 
+       }
+       input:focus{
+        outline: none ;
+        border-color: black;
+        box-shadow: none;
+       }
    }
 }
 

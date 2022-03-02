@@ -52,39 +52,46 @@ export const CommPricingInfo = ({nextStep,handleChange,
        
 	 <div className="priceform_price_Basic_input-container">
         <label >Rent per sqft per month   </label>
-		<input  type="text"  placeholder=' '  />
+		<input   name=" rent_per_Squarefoot" type="text" onChange={handleChange('rent_per_Squarefoot')}
+              defaultValue={values.rent_per_Squarefoot}  />
 		
         		
 	 </div>
     <div className="priceform_price_Basic_input-container">
         <label >Security money</label>
-		<input  type="text"  placeholder=''  />
+		<input   name="security_money" type="text" onChange={handleChange('security_money')}
+              defaultValue={values.security_money}  />
 		
         		
 	</div>
     <div className="priceform_price_Basic_input-container">
         <label >Maintenance charge</label>
-		<input  type="password"  />
+		<input   name="maintenance_charge" type="text" onChange={handleChange('maintenance_charge')}
+              defaultValue={values.maintenance_charge} />
         		
 	</div>
 	<div className="priceform_price_Basic_input-container" >
         <label>Electricity Charge</label>		
-		<input type="password" required="" placeholder=''/>
+		<input  name="electric_charge" type="text" onChange={handleChange('electric_charge')}
+              defaultValue={values.electric_charge}/>
 		
 	</div>
     <div className="priceform_price_Basic_input-container" >
         <label>Termination charge</label>		
-		 <input type="text" required="" placeholder='' /> 
+		 <input  name="termination_charge" type="text" onChange={handleChange('termination_charge')}
+              defaultValue={values.termination_charge} /> 
 		
 	</div>
     <div className="priceform_price_Basic_input-container" >
         <label>Other charges</label>		
-		 <input type="text" required="" placeholder='' /> 
+		 <input  name="other_charges" type="text" onChange={handleChange('other_charges')}
+              defaultValue={values.other_charges} /> 
 		
 	</div>
     <div className="priceform_price_Basic_input-container" >
         <label>Estimated total charge per month</label>		
-		 <input type="text" required="" placeholder='' /> 
+		 <input  name="est_tot_charge_per_month" type="text" onChange={handleChange('est_tot_charge_per_month')}
+              defaultValue={values.est_tot_charge_per_month} /> 
 		
 	</div>
    <div className='price-btn' > 

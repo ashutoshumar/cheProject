@@ -1,24 +1,26 @@
-import React from 'react'
-import "./login.css"
-import { Link } from 'react-router-dom'
+import React from 'react';
+import axios from 'axios';
+import "./login.css";
+import { Link } from 'react-router-dom';
 import { useQuery, gql } from "@apollo/client";
 
-const FILMS_QUERY = gql`
-{
-   users{
-    id
-    name
-  }
-}
-`;
+// const FILMS_QUERY = gql`
+// {
+//    users{
+//     id
+//     name
+//   }
+// }
+// `;
 export const Login = () => {
-  const { data, loading, error } = useQuery(FILMS_QUERY);
+  // const { data, loading, error } = useQuery(FILMS_QUERY);
 
-  if (loading) return "Loading...";
-  if (error) return <pre>{error.message}</pre>
+  // if (loading) return "Loading...";
+  // if (error) return <pre>{error.message}</pre>
 
   const handle=()=>{
-    console.log(data)
+    axios.get('https://auth.itachi.rocks/auth/google/url')
+        .then(response => {console.log(response)});
   }
   return (
     <div class="box">

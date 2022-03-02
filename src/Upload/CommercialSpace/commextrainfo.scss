@@ -73,7 +73,7 @@
 .extrainfoform{
 position: absolute;
 width:100%;
-height: 36rem;
+height: 40rem;
 margin-top: 12rem;
 background: #FFFFFF;
 // border: 2px solid black;
@@ -111,6 +111,14 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         font-size:14px;
         
        }
+       input:hover {
+        border:1px solid black; 
+       }
+       input:focus{
+        outline: none ;
+        border-color: black;
+        box-shadow: none;
+       }
        &_des{
         margin-top:15px;
         margin-left: 50px;
@@ -127,18 +135,26 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
             cursor:text;        
             background-color:white ;
            }
-           input{
+           textarea{
             
             border:1px solid #02A5F5; 
             border-radius: 3px; 
             background:transparent;
             width: 22rem;
             height: 80px;
-            padding: 0 1rem;
+            // padding: 0 0.1rem;
             font-family: Mulish;
             font-style: normal;
-            font-size:14px;
+            font-size:8px;
             
+           }
+           textarea:hover {
+            border:1px solid black; 
+           }
+           textarea:focus{
+            outline: none ;
+            border-color: black;
+            box-shadow: none;
            }
        }
        &_split{
@@ -176,6 +192,10 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
            
             
            }
+           p:hover{
+           
+            border:1px solid   rgb(59, 59, 59); 
+           }
 
            input{
         
@@ -185,11 +205,19 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
             margin-top: 8px;
             width: 10rem;
              height: 30px;
-             padding: 0 2rem 0 2rem;
+             padding: 0 1rem 0 1rem;
             float: right;
 
           
             
+           }
+           input:hover {
+            border:1px solid black; 
+           }
+           input:focus{
+            outline: none ;
+            border-color: black;
+            box-shadow: none;
            }
 
        }
