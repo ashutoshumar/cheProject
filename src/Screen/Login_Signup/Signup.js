@@ -32,9 +32,10 @@ export const Signup = () => {
           ,
          variables:
          {
-             name:name,
-             email:email,
-             phone:phone
+              name:name,
+              email:email,
+              phone:phone
+          
          }
      });
   

@@ -28,7 +28,7 @@ export default class CommercialSpace extends Component {
         availabilityStatus:'',
         suitable_for:[],
         floorStatus:'',
-        amenities:'',
+        amenities:[],
         description:'',
         pic_url:''
       };
@@ -55,14 +55,15 @@ export default class CommercialSpace extends Component {
   };
 render() {
     const { step } = this.state;
-    const {  property_name,  name, email,phone, pinCode, city, fullAddress,  rent_per_Squarefoot,security_money,maintenance_charge, electric_charge,termination_charge, other_charges,est_tot_charge_per_month, dis_from_road, preferredTenants,numbersOfBathRoom,furnishingStatus, availabilityStatus, floorStatus, amenities, suitable_for,description,pic_url} = this.state;
-    const values = {  property_name,  name, email,phone, pinCode, city, fullAddress,  rent_per_Squarefoot,security_money,maintenance_charge, electric_charge,termination_charge, other_charges,est_tot_charge_per_month, dis_from_road, preferredTenants,numbersOfBathRoom,furnishingStatus, availabilityStatus, floorStatus, amenities, suitable_for,description,pic_url};
+    const {  property_name,  name, email,phone, pinCode, city, fullAddress,  rent_per_Squarefoot,security_money,maintenance_charge, electric_charge,termination_charge, other_charges,est_tot_charge_per_month, dis_from_road, furnishingStatus, availabilityStatus, floorStatus, amenities, suitable_for,description,pic_url} = this.state;
+    const values = {  property_name,  name, email,phone, pinCode, city, fullAddress,  rent_per_Squarefoot,security_money,maintenance_charge, electric_charge,termination_charge, other_charges,est_tot_charge_per_month, dis_from_road, furnishingStatus, availabilityStatus, floorStatus, amenities, suitable_for,description,pic_url};
 
     switch (step) {
         
         case 1:
           return (
             <BasicDetails
+              header="Commercial Space"
               nextStep={this.nextStep}
               prevStep={this.prevStep}
               handleChange={this.handleChange}
@@ -117,7 +118,7 @@ render() {
               
             
         default:
-          (console.log('This is a multi-step form built with React.'+values.propertyType+'hii'))
+          (console.log('This is a multi-step form built with React. hii'))
     }
 }
 }

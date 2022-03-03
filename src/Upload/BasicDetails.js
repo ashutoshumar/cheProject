@@ -1,7 +1,7 @@
 import React from 'react'
 import "./basicdetails.scss"
 import { useNavigate } from 'react-router-dom';
-export const BasicDetails = ({nextStep,handleChange,
+export const BasicDetails = ({header,nextStep,handleChange,
   values, prevStep}) => {
     const navigate=useNavigate()
   const conTinue = e => {
@@ -20,7 +20,7 @@ export const BasicDetails = ({nextStep,handleChange,
    
    <div className='basicDetails'>
       <div className='Header'>
-          <p>Commercial Space</p>
+          <p>{header}</p>
     <div className='Header_img'>  
       <img
       alt=""

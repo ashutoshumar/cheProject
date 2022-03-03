@@ -5,7 +5,8 @@ export const PropertyType = () => {
   let navigate = useNavigate();
   const handle=(value)=>{
     // window.alert("wow")
-    navigate('/commercialspace')
+    // navigate('/commercialspace')
+    navigate(`/${value}`)
   }
   return (
     < >
@@ -34,7 +35,7 @@ export const PropertyType = () => {
             />
              <p>Villa</p>
              </div>
-             <div className="chooseProperty_group_type"> 
+             <div className="chooseProperty_group_type" onClick={()=>{handle("marriagehall")}}> 
             <img
               alt=""
               className="chooseProperty_group_type_img"

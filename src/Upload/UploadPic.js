@@ -1,14 +1,53 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./uploadPic.scss"
+import { CREATE_COMMERCIAL_SPACE_MUTATION } from '../GraphQl/Mutations';
 import { useNavigate } from 'react-router-dom';
+import { useMutation } from "@apollo/client";
 export const UploadPic =({nextStep,handleChange,
   values, prevStep}) => {
-   const nevigate=useNavigate()
+    const [errors,setErrors]=useState({})
+  const navigate=useNavigate()
+    const [createCommercialSpace, { data,loading,error }] = useMutation(CREATE_COMMERCIAL_SPACE_MUTATION,{
+      update(proxy,result)
+      {
+
+
+          console.log(result)
+          navigate('/')
+        
+         
+      },
+      onError(err){
+       setErrors(err.graphQLErrors)
+        console.log(err)
+        navigate('/error'
+            )
+     //   if (err)  return <span>Unable to Sign In</span>
+      }
+       ,
+      variables:
+      {
+          name:values.name,
+          city:values.city,
+          address:values.fullAddress,
+          pin:200,
+          distance_from_road:23.7,
+          area: 404.5,
+          availability:true,
+          amenities:values.amenities,
+          photos:["hii","how"],
+          suitable_for:values.suitable_for,
+          coordinate:["108","109"],
+          ownerId:"93807242-32d3-4893-8ab3-d06c35898ce7"
+      }
+  });
+  
   const conTinue = e => {
       e.preventDefault();
     //  this.props.nextStep();
       console.log(values)
-       nevigate('/')
+      createCommercialSpace()
+     
        
     };
     const previous = e => {

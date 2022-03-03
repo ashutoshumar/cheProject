@@ -6,6 +6,9 @@ import makeAnimated from 'react-select/animated';
 export const CommextraInfo =({nextStep,handleChange,handleChange1,
   values, prevStep}) => {
     const [selected,setSelected]=useState([])
+    const [selectedAmenities,setSelectedAmenities]=useState([])
+    const [furshing,setFurnshing]=useState('')
+    const [floor,setFloor]=useState('')
     const style = {
       control: (base, state) => ({
         ...base,
@@ -26,7 +29,14 @@ export const CommextraInfo =({nextStep,handleChange,handleChange1,
   const conTinue = e => {
       e.preventDefault();
     //  this.props.nextStep();
-       
+    handleChange1('furnishingStatus',furshing)
+    handleChange1('floorStatus',floor)
+    handleChange1('suitable_for',selected)
+    handleChange1('amenities',selectedAmenities)
+    console.log(selected)
+    console.log(selectedAmenities)
+    console.log(floor)
+    console.log(furshing)
         nextStep();
      
     };
@@ -37,10 +47,46 @@ export const CommextraInfo =({nextStep,handleChange,handleChange1,
   
     };
 
-    const handleChangemulti=(options)=>{
-      setSelected(options);
+    const handleChangemulti=(type,options)=>{
+      var i=[]
+      var j=[]
+      if(type==="suitable_for")
+     {
+      for (const opt of options) {
+        i.push(opt.value)
+      }
+     
+      
+      setSelected(i)
+     }
+      else if(type==="amenities")
+      {
+        for (const opt of options) {
+          j.push(opt.value)}
+
+        setSelectedAmenities(j)
+      }
+
    //   handleChange1('suitable_for',selected)
-      console.log(selected)
+     
+     
+    }
+    const handleChangeSingle=(type,options)=>{
+      if(type==='furnishing')
+      {
+        setFurnshing(options.value)
+        
+       
+      }
+      else if(type==='floor')
+      {
+        setFloor(options.value)
+        
+      
+      }
+  //     setSelected(options);
+  //  //   handleChange1('suitable_for',selected)
+  //     console.log(selected)
      
     }
   return (
@@ -95,7 +141,7 @@ export const CommextraInfo =({nextStep,handleChange,handleChange1,
       isMulti
       options={options}
       styles={style}
-      onChange={handleChangemulti}
+      onChange={(e)=>{handleChangemulti("suitable_for",e)}}
     />
             
 		
@@ -118,12 +164,12 @@ export const CommextraInfo =({nextStep,handleChange,handleChange1,
 	</div>
     <div className="extrainfoform_Basic_input-container">
         <label >Furnishing status</label>
-        <Select  styles={style}   placeholder="" options={options} onChange={()=>{handleChangemulti()}} />
+        <Select  styles={style}   placeholder="" options={options} onChange={(e)=>{handleChangeSingle('furnishing',e)}} />
         		
 	</div>
 	<div className="extrainfoform_Basic_input-container" >
         <label>Floor Status</label>		
-        <Select  styles={style}   placeholder="" options={options}  onChange={()=>{handleChangemulti()}}/>
+        <Select  styles={style}   placeholder="" options={options}  onChange={(e)=>{handleChangeSingle('floor',e)}}/>
 		
 	</div>
     <div className="extrainfoform_Basic_input-container" >
@@ -135,7 +181,7 @@ export const CommextraInfo =({nextStep,handleChange,handleChange1,
       placeholder=""
       isMulti
       options={options}
-      onChange={()=>{handleChangemulti()}}
+      onChange={(e)=>{handleChangemulti("amenities",e)}}
     /> 
 		
 	</div>
